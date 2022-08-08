@@ -3,6 +3,7 @@ import pickle
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.special
+import json
 from scipy.constants import c
 
 from rich.progress import track
@@ -12,7 +13,8 @@ tau_max = 0.30
 n_particles_test = 400000
 n_particles_new_sample = 1000000
 
-optics = pickle.load(open("simulation_input.pkl","rb"))["optics"]
+#optics = pickle.load(open("simulation_input.pkl","rb"))["optics"]
+optics = json.load(open("optics.json","r"))
 
 #parabolic example distribution
 def distr(tau, tau_max):
